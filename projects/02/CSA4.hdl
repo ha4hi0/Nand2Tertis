@@ -1,0 +1,14 @@
+/**
+ * Unit of Carry Select Adder
+ */
+
+ CHIP CSA4 {
+    IN a[4], b[4], c;
+    OUT sum[4], carry;
+
+    PARTS:
+      Add4(a=a, b=b, c=false, sum=s0, carry=c0);
+      Add4(a=a, b=b, c=true, sum=s1, carry=c1);
+      Mux4(a=s0, b=s1, sel=c, out=sum);
+      Mux(a=c0, b=c1, sel=c, out=carry);
+ }
