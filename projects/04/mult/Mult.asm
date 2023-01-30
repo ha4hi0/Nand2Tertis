@@ -23,16 +23,19 @@ M=0
 @i
 D=M
 @R1
-D=M-D
+D=D-M
 @END
 D;JGE
 
 @R0
 D=M
 @R2
-D=D+M
+M=D+M
 
 @i
 M=M+1
+
+@LOOP
+0;JMP
 
 (END)
